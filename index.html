@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#120f0b" />
+  <meta name="description" content="An interactive Warhammer 40,000: Darktide playstyle and talent build recommender." />
+  <title>Reject Build Cogitator — Darktide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="hazard hazard-top" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand-lockup">
+      <div class="brand-sigil" aria-hidden="true">I</div>
+      <div>
+        <p class="kicker">MOURNINGSTAR // TACTICAL COGITATOR</p>
+        <h1>REJECT BUILD COGITATOR</h1>
+        <p class="subtitle">Pick your class. Mark how you like to fight. Receive a talent route that actually fits you.</p>
+      </div>
+    </div>
+    <div class="status-strip" aria-label="Guide status">
+      <span><i></i> DATASET: SEP 2026</span>
+      <span>7 CLASSES</span>
+      <span>FAN-MADE</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-panel panel">
+      <div>
+        <span class="eyebrow">+++ BUILD IDENTIFICATION RITE +++</span>
+        <h2>You do not need to memorize the whole talent tree.</h2>
+        <p>Choose what feels good to <em>you</em>. The cogitator compares your preferences against curated build archetypes and explains the important talent choices, strengths, trade-offs and flex options.</p>
+      </div>
+      <div class="warning-stamp">NO SINGLE<br>“BEST” BUILD</div>
+    </section>
+
+    <nav class="stepper" aria-label="Build steps">
+      <button class="step active" data-step-jump="1"><b>01</b><span>Class</span></button>
+      <div class="step-line"></div>
+      <button class="step" data-step-jump="2"><b>02</b><span>Playstyle</span></button>
+      <div class="step-line"></div>
+      <button class="step" data-step-jump="3"><b>03</b><span>Recommendation</span></button>
+    </nav>
+
+    <section id="step-1" class="build-step active" aria-labelledby="class-title">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <div>
+          <p class="eyebrow">SELECT OPERATIVE DESIGNATION</p>
+          <h2 id="class-title">Which class are you building?</h2>
+        </div>
+      </div>
+      <div id="class-grid" class="class-grid"></div>
+    </section>
+
+    <section id="step-2" class="build-step" aria-labelledby="style-title">
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <div>
+          <p class="eyebrow">COMBAT DOCTRINE PARAMETERS</p>
+          <h2 id="style-title">What do you want the build to feel good at?</h2>
+          <p class="section-help">Pick as many as you want. Two to five usually gives the clearest result.</p>
+        </div>
+      </div>
+
+      <div id="chosen-class-banner" class="chosen-class-banner"></div>
+      <div id="tag-grid" class="tag-grid"></div>
+
+      <div class="action-row">
+        <button id="back-to-class" class="btn btn-ghost">← Change class</button>
+        <button id="calculate-build" class="btn btn-primary" disabled>Consult the Cogitator <span>→</span></button>
+      </div>
+    </section>
+
+    <section id="step-3" class="build-step" aria-labelledby="result-title">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <div>
+          <p class="eyebrow">SANCTIONED RECOMMENDATION</p>
+          <h2 id="result-title">Your build direction</h2>
+        </div>
+      </div>
+
+      <div id="result-shell" class="result-shell"></div>
+
+      <div class="action-row result-actions">
+        <button id="start-over" class="btn btn-ghost">← Start over</button>
+        <button id="copy-build" class="btn btn-primary">Copy Build Summary</button>
+      </div>
+    </section>
+
+    <section class="intel panel" aria-labelledby="intel-title">
+      <div class="section-heading compact">
+        <span class="section-number">+</span>
+        <div>
+          <p class="eyebrow">ARCHIVUM NOTES</p>
+          <h2 id="intel-title">How to use this guide</h2>
+        </div>
+      </div>
+      <div class="intel-grid">
+        <article>
+          <h3>Core route, not a prison</h3>
+          <p>The recommended Blitz, Ability, Aura and Keystone are the spine of the build. Passive nodes are priorities, not commandments. Move flex points if another node makes the build more comfortable for you.</p>
+        </article>
+        <article>
+          <h3>Comfort beats paper DPS</h3>
+          <p>A technically stronger talent is not stronger for you if it makes you die more often. Defensive, cooldown and toughness picks are deliberately valued when you select Tanky, Support or Beginner Friendly.</p>
+        </article>
+        <article>
+          <h3>Patch-sensitive</h3>
+          <p>Darktide balance changes. This version is curated for September 2026. Links in each recommendation lead to current class databases or official class information for extra checking.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="hazard" aria-hidden="true"></div>
+    <p><strong>Reject Build Cogitator</strong> is an unofficial fan-made helper and is not affiliated with Fatshark or Games Workshop. Warhammer 40,000: Darktide and related names belong to their respective owners.</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Build summary copied.</div>
+  <script src="app.js"></script>
+</body>
+</html>
