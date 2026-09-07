@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="talent-guides.css" />
+  <link rel="stylesheet" href="talent-library.css" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -30,6 +31,7 @@
       <span>DATASET: SEP 2026</span>
       <span>7 CLASSES</span>
       <span>21 TALENT ROUTES</span>
+      <span>STIMM LAB</span>
       <span>UNOFFICIAL</span>
     </div>
   </header>
@@ -99,6 +101,18 @@
       </div>
     </section>
 
+    <section class="talent-library-section" aria-labelledby="talent-library-title">
+      <div class="talent-library-head">
+        <span class="section-number">+</span>
+        <div>
+          <p class="eyebrow">TACTICA ARCHIVUM // BROWSE WITHOUT THE QUIZ</p>
+          <h2 id="talent-library-title">Talent Tree Library</h2>
+          <p>Choose a class and archetype to inspect a suggested path directly. Hive Scum also includes a separate Cartel Special Stimm Lab guide.</p>
+        </div>
+      </div>
+      <div id="talent-library"></div>
+    </section>
+
     <section class="intel panel" aria-labelledby="intel-title">
       <div class="section-heading compact">
         <span class="section-number">+</span>
@@ -113,12 +127,12 @@
           <p>The talent guide tells you the named Blitz, Aura, Ability, modifiers, Keystone and important passive talents to take. Spend the necessary connector/stat nodes between them as you move through the in-game tree.</p>
         </article>
         <article>
-          <h3>Flex points are intentional</h3>
-          <p>Weapons change what a build needs. A slow heavy weapon may want different stamina or attack-speed support than a knife or gun, so spare connector points are left flexible instead of pretending one exact point is correct for every loadout.</p>
+          <h3>Community-informed, not gospel</h3>
+          <p>These routes are suggestions informed by current class information, patch notes and recurring community build patterns. Weapon choice, difficulty, team composition and personal comfort can all make a different node better for you.</p>
         </article>
         <article>
           <h3>Patch-sensitive</h3>
-          <p>Darktide balance changes. This version is curated for September 2026 and each talent route links to a current class build database so major tree changes can be checked.</p>
+          <p>Darktide balance changes. This version is curated for September 2026 and each talent route links to current class/build resources so major tree changes can be checked.</p>
         </article>
       </div>
     </section>
@@ -126,12 +140,13 @@
 
   <footer>
     <div class="hazard" aria-hidden="true"></div>
-    <p><strong>Reject Build Cogitator</strong> is an unofficial fan-made helper and is not affiliated with Fatshark or Games Workshop. Warhammer 40,000: Darktide and related names belong to their respective owners.</p>
+    <p><strong>Reject Build Cogitator</strong> is an unofficial fan-made helper and is not affiliated with Fatshark or Games Workshop. Talent routes and Stimm Lab mixes are suggestions synthesized from current game information and community build patterns, not official Fatshark recommendations. Warhammer 40,000: Darktide and related names belong to their respective owners.</p>
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite">Talent route copied.</div>
   <script src="app.js"></script>
   <script src="talent-guides.js"></script>
+  <script src="talent-library.js"></script>
   <script src="ui-fixes.js"></script>
 </body>
 </html>
